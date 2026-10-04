@@ -1,0 +1,669 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday My Love ❤️</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            background:
+                linear-gradient(135deg, #160018, #4b0b38, #ff176b);
+
+            color: white;
+        }
+
+
+        /* STARS */
+
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+
+            background: white;
+            border-radius: 50%;
+
+            animation: twinkle 2s infinite alternate;
+        }
+
+        .star1 {
+            left: 10%;
+            top: 15%;
+        }
+
+        .star2 {
+            left: 25%;
+            top: 30%;
+            animation-delay: 0.5s;
+        }
+
+        .star3 {
+            right: 15%;
+            top: 18%;
+            animation-delay: 1s;
+        }
+
+        .star4 {
+            right: 30%;
+            top: 40%;
+            animation-delay: 1.5s;
+        }
+
+        .star5 {
+            left: 15%;
+            bottom: 20%;
+            animation-delay: 0.8s;
+        }
+
+        @keyframes twinkle {
+
+            from {
+                opacity: 0.2;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+
+        }
+
+
+        /* FLOATING HEARTS */
+
+        .heart {
+            position: absolute;
+
+            bottom: -50px;
+
+            font-size: 25px;
+
+            animation: float 6s linear infinite;
+
+            opacity: 0;
+        }
+
+        .heart1 {
+            left: 10%;
+        }
+
+        .heart2 {
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .heart3 {
+            left: 55%;
+            animation-delay: 1s;
+        }
+
+        .heart4 {
+            left: 80%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-700px) rotate(360deg);
+                opacity: 0;
+            }
+
+        }
+
+
+        /* MAIN CARD */
+
+        .card {
+            position: relative;
+
+            width: 90%;
+            max-width: 600px;
+
+            padding: 45px 30px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+            border-radius: 30px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(255, 40, 130, 0.4);
+        }
+
+
+        /* BIG HEART */
+
+        .big-heart {
+            font-size: 75px;
+
+            display: inline-block;
+
+            animation: heartbeat 1.2s infinite;
+
+            filter:
+                drop-shadow(0 0 15px #ff4d91);
+        }
+
+        @keyframes heartbeat {
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+
+        }
+
+
+        /* HEADING */
+
+        h1 {
+            font-size: 55px;
+
+            margin-top: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    white,
+                    #ffb6d4,
+                    white
+                );
+
+            background-size: 200% auto;
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+
+            to {
+                background-position: 200% center;
+            }
+
+        }
+
+
+        h2 {
+            font-size: 28px;
+
+            margin-top: 10px;
+
+            color: #ffd5e6;
+        }
+
+
+        /* LINE */
+
+        .line {
+            width: 90px;
+
+            height: 3px;
+
+            background: #ff6b9f;
+
+            margin: 20px auto;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 0 15px #ff4d91;
+        }
+
+
+        /* TYPING TEXT */
+
+        .typing {
+            font-size: 19px;
+
+            line-height: 1.7;
+
+            min-height: 60px;
+
+            color: #ffeaf3;
+        }
+
+        .cursor {
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+
+            50% {
+                opacity: 0;
+            }
+
+        }
+
+
+        /* MESSAGE */
+
+        .message {
+            margin-top: 20px;
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.15);
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+
+        /* BUTTON */
+
+        button {
+            margin-top: 25px;
+
+            padding: 15px 30px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff3d79,
+                    #ff7eae
+                );
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 25px
+                rgba(255, 61, 121, 0.4);
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform:
+                translateY(-3px)
+                scale(1.05);
+
+            box-shadow:
+                0 0 30px
+                rgba(255, 100, 170, 0.9);
+        }
+
+
+        /* HIDDEN SURPRISE */
+
+        #surprise {
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 22px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255, 255, 255, 0.12);
+
+            font-size: 20px;
+
+            line-height: 1.7;
+
+            animation: popup 0.7s ease;
+        }
+
+        @keyframes popup {
+
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+
+        /* FOOTER */
+
+        .footer {
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            color: #f2b8d0;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .card {
+                padding: 35px 20px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+
+            .big-heart {
+                font-size: 60px;
+            }
+
+            .typing {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- STARS -->
+
+    <div class="star star1"></div>
+    <div class="star star2"></div>
+    <div class="star star3"></div>
+    <div class="star star4"></div>
+    <div class="star star5"></div>
+
+
+    <!-- FLOATING HEARTS -->
+
+    <div class="heart heart1">❤️</div>
+
+    <div class="heart heart2">💕</div>
+
+    <div class="heart heart3">💖</div>
+
+    <div class="heart heart4">💗</div>
+
+
+    <!-- MAIN CARD -->
+
+    <div class="card">
+
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+
+        <h1>
+            Happy Birthday PULOOOOO
+        </h1>
+
+
+        <!-- APNI GF KA NAME YAHAN LIKHO -->
+
+        <h2>
+            My Beautiful Love 💕
+        </h2>
+
+
+        <div class="line"></div>
+
+
+        <!-- TYPING EFFECT -->
+
+        <div
+            class="typing"
+            id="typing">
+        </div>
+
+
+        <!-- MAIN MESSAGE -->
+
+        <div class="message">
+
+            Today is a very special day
+            because it is the day
+            someone incredibly special
+            came into this world. 🥰
+
+            <br><br>
+
+            You bring happiness,
+            smiles and beautiful memories
+            into my life.
+
+            <br><br>
+
+            I hope all your dreams
+            come true and you always
+            keep smiling. ✨❤️
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <button
+            id="surpriseButton">
+
+            💝 Open Your Surprise 💝
+
+        </button>
+
+
+        <!-- HIDDEN MESSAGE -->
+
+        <div id="surprise">
+
+            🎂 <strong>
+            Happy Birthday My Love HAWAAALLLIIII!
+            </strong> 🎂
+
+            <br><br>
+
+            I may not have the perfect
+            words to explain how special
+            you are to me...
+
+            <br><br>
+
+            But I hope you always know
+            that you mean so much to me. ❤️
+
+            <br><br>
+
+            Keep smiling,
+            keep shining,
+            and always stay the beautiful
+            person you are. 🥰
+
+            <br><br>
+
+            <strong>
+                I Love You More Than
+                Words Can Say. ❤️
+            </strong>
+
+        </div>
+
+
+        <div class="footer">
+
+            Made with ❤️ especially for you
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+        /* TYPING EFFECT */
+
+        let typing =
+            document.getElementById("typing");
+
+        let text =
+            "A little birthday surprise, made with lots of love... ❤️";
+
+        let i = 0;
+
+
+        function typeText() {
+
+            if (i < text.length) {
+
+                typing.innerHTML =
+                    text.substring(0, i + 1) +
+                    '<span class="cursor">|</span>';
+
+                i++;
+
+                setTimeout(typeText, 60);
+
+            }
+
+        }
+
+        typeText();
+
+
+        /* SURPRISE BUTTON */
+
+        let button =
+            document.getElementById("surpriseButton");
+
+        let surprise =
+            document.getElementById("surprise");
+
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                surprise.style.display =
+                    "block";
+
+                button.innerHTML =
+                    "❤️ Surprise Opened ❤️";
+
+                button.disabled =
+                    true;
+
+
+                /* EXTRA HEARTS */
+
+                for (let i = 0; i < 15; i++) {
+
+                    let heart =
+                        document.createElement("span");
+
+                    heart.innerHTML =
+                        ["❤️", "💕", "💖", "✨", "🎉"]
+                        [Math.floor(Math.random() * 5)];
+
+                    heart.style.position =
+                        "absolute";
+
+                    heart.style.left =
+                        (10 + Math.random() * 80) + "%";
+
+                    heart.style.top =
+                        "50%";
+
+                    heart.style.fontSize =
+                        (20 + Math.random() * 20) + "px";
+
+                    heart.style.animation =
+                        "float 3s linear forwards";
+
+                    document
+                        .querySelector(".card")
+                        .appendChild(heart);
+
+
+                    setTimeout(
+                        function () {
+                            heart.remove();
+                        },
+                        3000
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
+```
